@@ -1,29 +1,19 @@
 #include "calculate.h"
 
-void* calculate(void *arg){
-    Calculation *calculation = (Calculation*)arg;
-    float a = calculation->a;
-    float b = calculation->b;
-    float *result = (float*)malloc(sizeof(float));
-
-    if(calculation->operation == '+'){
-        *result = a + b;
-        pthread_exit(result);
+float calculate(float a, float b, char operation){
+    if(operation == '+'){
+        return a + b;
     }
-    else if(calculation->operation == '-'){
-        *result = a - b;
-        pthread_exit(result);
+    else if(operation == '-'){
+        return a - b;
     }
-    else if(calculation->operation == '*'){
-        *result = a * b;
-        pthread_exit(result);
+    else if(operation == '*'){
+        return a * b;
     }
-    else if(calculation->operation == '/'){
-        *result = a / b;
-        pthread_exit(result);
+    else if(operation == '/'){
+        return a / b;
     }
     else{
-        *result = 0;
-        pthread_exit(result);
+        return 0;
     }
 }
