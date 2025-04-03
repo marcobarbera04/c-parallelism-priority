@@ -69,7 +69,7 @@ int main(){
 
     clock_t finish_time = clock();
     double execution_time = (double)(finish_time - start_time) / CLOCKS_PER_SEC;
-    printf("Execution time: %.12lf\n", execution_time);
+    printf("Execution time: %.6lf seconds\n", execution_time);
 
     return 0;
 }
